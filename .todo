@@ -1,5 +1,11 @@
 (-get notes to store into task
 // how to save items 2 levels deep)
 
--get notes to add
-// "this.props.task.notes.map not a function" in Task.js
+(-get notes to add
+// "this.props.task.notes.map not a function" in Task.js)
+
+-get notes to complete
+
+-get notes and task to display complete through styling
+
+-styling

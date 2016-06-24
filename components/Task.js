@@ -9,6 +9,7 @@ class Task extends Component {
     }
   }
 
+
   handleChange(event) {
     this.setState({
       note: event.target.value
@@ -28,10 +29,15 @@ class Task extends Component {
     this.props.actions.deleteTask(this.props.task.id)
   }
 
+  handleCompleteNote() {
+    console.log(this)
+    this.props.actions.completeNote(this.props.task.id, this.props.task.notes.id)
+  }
+
   render() {
     return (
       <li>
-        {this.props.task.title} &nbsp;
+        <span>{this.props.task.title} </span>&nbsp;
         <button onClick={this.handleComplete.bind(this)}>Mark as completed</button>
         <button onClick={this.handleDelete.bind(this)}>Delete task</button>
             <form onSubmit={this.handleNote.bind(this)}>
@@ -43,7 +49,7 @@ class Task extends Component {
             </form>
         <ul>
           {this.props.task.notes.map((note, i) => {
-            return <Note key={`note${i}`} note={note}/>
+            return <Note handleCompleteNote={this.handleCompleteNote.bind(this)} key={`note${i}`} note={note}/>
           })}
         </ul>
       </li>
