@@ -29,11 +29,6 @@ class Task extends Component {
     this.props.actions.deleteTask(this.props.task.id)
   }
 
-  handleCompleteNote() {
-    console.log(this)
-    this.props.actions.completeNote(this.props.task.id, this.props.task.notes.id)
-  }
-
   render() {
     return (
       <li>
@@ -49,7 +44,7 @@ class Task extends Component {
             </form>
         <ul>
           {this.props.task.notes.map((note, i) => {
-            return <Note handleCompleteNote={this.handleCompleteNote.bind(this)} key={`note${i}`} note={note}/>
+            return <Note actions={this.props.actions} task={this.props.task} key={`note${i}`} note={note}/>
           })}
         </ul>
       </li>

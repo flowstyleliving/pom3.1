@@ -6,10 +6,11 @@ let actions = {
       id: id
     }
   },
-  completeNote: (id) => {
+  completeNote: (taskId, noteId) => {
     return {
       type: 'COMPLETE_NOTE',
-      id: id
+      taskId: taskId,
+      noteId: noteId,
     }
   },
   addTask: function(text) {

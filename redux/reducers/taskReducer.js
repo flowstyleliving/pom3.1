@@ -22,15 +22,18 @@ let taskReducer = function(tasks = [], action) {
       })
     case 'COMPLETE_NOTE':
       return tasks.map((task) => {
-          if(action.id !== task.id) {
+          if(action.taskId !== task.id) {
             return task;
-          } else if(action.id === task.id) {
+          } else if(action.taskId === task.id) {
             const { notes } = task;
             notes.map((note) => {
-              return Object.assign({}, task, {note: {completed: !note.completed}});
-            })
-          }
-        })
+              return action.noteId === note.id ?
+                Object.assign({}, task, {notes: {completed: !note.completed}}) : note
+                // console.log(setTask)
+                // return setTask;
+          })
+        }
+      })
     case 'ADD_TASK':
       return [{
           title: action.text,
