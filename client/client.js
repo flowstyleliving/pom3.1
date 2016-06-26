@@ -14,7 +14,7 @@ import { Provider } from 'react-redux'
 
 let initialState = {
   tasks: [{
-    id: 1,
+    id: 0,
     title: 'do this',
     completed: false,
     notes: [{
@@ -23,16 +23,7 @@ let initialState = {
       completed: false
     }]
   }, {
-    id: 2,
-    title: 'then this',
-    completed: false,
-    notes: [{
-      id: 0,
-      title: 'With even more Attention',
-      completed: false
-    }]
-  }, {
-    id: 3,
+    id: 1,
     title: 'yes',
     completed: false,
     notes: [{
