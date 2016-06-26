@@ -4,8 +4,10 @@
 (-get notes to add
 // "this.props.task.notes.map not a function" in Task.js)
 
--get notes to complete
+(-get notes to complete)
 
--get notes and task to display complete through styling
+(-get notes and task to display complete through styling)
 
 -styling
+
+-set max of 3 tasks and hide input while showing "Simplify or GTFO"

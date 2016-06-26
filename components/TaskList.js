@@ -1,9 +1,12 @@
-  import React, { Component } from 'react'
+import React, { Component } from 'react'
 import Task from './Task'
+import Radium from 'radium'
+
 
 class TaskList extends Component {
 
   render() {
+
     return (
       <ul>
         {

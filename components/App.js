@@ -5,15 +5,31 @@ import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
 import actions from '../redux/actions'
 // import UserInfo from '../components/UserInfo'
+import Radium from 'radium'
 
 class App extends Component {
 
   render() {
+    let styles = {
+      base: {
+        background: '#d5c8b8'
+      },
+      title: {
+        fontFamily: 'futura',
+        fontSize: '3em',
+        ':hover': {
+          color: 'white'
+        }
+      }
+    }
     return (
       <div>
-        <h1>Task List</h1>
+        <center><h1 style={styles.title}>POM Task List</h1></center>
+        {Radium.getState(this.state, 'HI', ':hover') ? (
+          <span>{'HI'} HOW</span>
+        ): null}
         {/*<UserInfo user={this.props.user} actions={this.props.actions}/>*/}
-        <TaskInput addTask={this.props.actions.addTask}/>
+        <TaskInput tasks={this.props.tasks} addTask={this.props.actions.addTask}/>
         <TaskList actions={this.props.actions} tasks={this.props.tasks}/>
       </div>
     )
@@ -30,4 +46,4 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(actions, dispatch)
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Radium(App))

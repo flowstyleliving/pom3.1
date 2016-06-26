@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Radium from 'radium'
+
 
 class Note extends Component {
   handleCompleteNote() {
@@ -6,13 +8,27 @@ class Note extends Component {
   }
 
   render() {
+    let styles = {
+      base: {
+        background: 'blue',
+        border: 0,
+        borderRadius: 4,
+        color: 'white',
+        padding: '10px',
+      }, item: {
+        listStyleType: 'none',
+        marginLeft: '-10px'
+      }, completed: {
+        textDecoration: 'line-through'
+      }
+    };
     return (
-      <li>
-        {this.props.note.title}
-        <button onClick={this.handleCompleteNote.bind(this)}>Mark as completed</button>
+      <li style={styles.item}>
+        <button style={styles.base} onClick={this.handleCompleteNote.bind(this)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
+        &nbsp; <span style={Object.assign({}, this.props.note.completed && styles.completed)}>{this.props.note.title}</span>
       </li>
     )
   }
 }
 
-export default Note
+export default Radium(Note)
