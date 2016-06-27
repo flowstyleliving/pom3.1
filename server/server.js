@@ -18,7 +18,7 @@ app.use('/', function (req, res) {
     res.sendFile(path.resolve('client/index.html'));
 });
 
-var port = PROCESS.env.PORT || 8080;
+var port = process.env.PORT || 8080;
 
 app.listen(port, function(error) {
   if (error) throw error;
