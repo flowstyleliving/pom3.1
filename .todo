@@ -8,6 +8,6 @@
 
 (-get notes and task to display complete through styling)
 
--styling
+(-styling)
 
 (-set max of 3 tasks and hide input while showing "Simplify or GTFO")
