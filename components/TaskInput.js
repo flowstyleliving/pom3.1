@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
+import _ from 'lodash'
 
 class TaskInput extends Component {
 
@@ -18,15 +19,28 @@ class TaskInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
+    if(this.state.inputText === '') {
+      return alert('Please fill in a Task :)')
+    } else {
     this.props.addTask(this.state.inputText)
-    this.setState({inputText: ''})
+    this.setState({inputText: ''})}
+  }
+
+  validateInput(task) {
+    if(!task) {
+      return 'Please enter a task';
+    } else if (_.find(this.props.todos, todo => todo.task === task)) {
+      return 'Task already exists';
+    } else {
+      return null;
+    }
   }
 
   render() {
     let styles = {
       button: {
           position: 'absolute',
-          background: 'grey',
+          background: '#91a3b0',
           height: '46px',
           border: 0,
           borderRadius: 2,
@@ -45,7 +59,7 @@ class TaskInput extends Component {
       },
 
       simplify: {
-        color: 'grey',
+        color: '#91a3b0',
         fontFamily: 'futura',
       }
     }

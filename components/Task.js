@@ -19,10 +19,13 @@ class Task extends Component {
 
   handleNote(event) {
     event.preventDefault()
+    if(this.state.note === '') {
+      return alert('Please fill in a Note :)')
+    } else {
     this.props.actions.addNote(this.state.note, this.props.task.id)
     this.setState({
       note: ""
-    })
+    })}
   }
 
   handleComplete() {
@@ -80,7 +83,7 @@ class Task extends Component {
       },
 
       deleteButton: {
-        background: '#91a3b0',
+        background: 'grey',
         color: 'white',
         border: 0,
         borderRadius: 2,
@@ -88,7 +91,7 @@ class Task extends Component {
       },
 
       noteButton: {
-        background: 'grey',
+        background: '#91a3b0',
         border: 0,
         borderRadius: 2,
         color: 'white'
