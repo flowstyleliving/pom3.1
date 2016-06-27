@@ -26,35 +26,38 @@ class TaskInput extends Component {
     let styles = {
       button: {
           position: 'absolute',
-          height: '52px',
-          marginTop: '1px',
+          height: '46px',
           border: 0,
           borderRadius: 2,
           color: 'white',
           padding: '1em'
-      }, input: {
+      },
+
+      input: {
         position: 'relative',
         width: '200px',
         height: '30px',
         marginLeft: '-50px',
         borderRadius: 4,
         fontSize: '1em',
-        padding: '10px'
+        padding: '7px'
       }
     }
     return (
-      <center>
-      <form onSubmit={this.handleSubmit.bind(this)}>
-       <input
-          style={styles.input}
-          type="text"
-          placeholder="Type in your task..."
-          value={this.state.inputText}
-          onChange={this.handleChange.bind(this)}
-        /> &nbsp;
-        <button style={styles.button} type="submit"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-        </form>
-      </center>
+     <center>
+     { this.props.tasks.length < 3 ?
+       <form onSubmit={this.handleSubmit.bind(this)}>
+        <input
+         style={styles.input}
+         type="text"
+         placeholder="Type in your task..."
+         value={this.state.inputText}
+         onChange={this.handleChange.bind(this)}
+       /> &nbsp;
+       <button style={styles.button} type="submit"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+       </form>
+       : <h2>Simplify or GTFO</h2>}
+     </center>
     )
   }
 

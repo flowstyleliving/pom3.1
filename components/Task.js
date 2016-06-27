@@ -35,35 +35,58 @@ class Task extends Component {
 
   render() {
     let styles = {
-      base: {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        width: '400px'
-      }, list: {
+      list: {
         padding: '1em',
         listStyleType: 'none',
         fontSize: '1.5em',
-        fontFamily: 'futura'
-      }, noteInput: {
+        fontFamily: 'futura',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+
+      base: {
+        position: 'relative',
+        width: '500px',
+        paddingLeft: '300px',
+        marginLeft: 'auto',
+        marginRight: 'auto'
+      },
+
+      noteInput: {
         borderRadius: '4'
-      }, note: {
+      },
+
+      note: {
         textAlign: 'left',
         fontSize: '.5em'
-      }, completed: {
-        textDecoration: 'line-through'
-      }, checkButton: {
+      },
+
+      inner: {
+        color: 'black'
+      },
+
+      completed: {
+        textDecoration: 'line-through',
+        color: 'red'
+      },
+
+      checkButton: {
         background: 'blue',
         color: 'white',
         border: 0,
         borderRadius: 2,
         padding: '.7em'
-      }, deleteButton: {
+      },
+
+      deleteButton: {
         background: 'red',
         color: 'white',
         border: 0,
         borderRadius: 2,
         padding: '.7em'
-      }, noteButton: {
+      },
+
+      noteButton: {
         border: 0,
         borderRadius: 2,
         color: 'white',
@@ -74,8 +97,8 @@ class Task extends Component {
       <li style={styles.list}>
       <div style={styles.base}>
         <button style={styles.checkButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
-        &nbsp;<span style={Object.assign({}, this.props.task.completed && styles.completed)}>{this.props.task.title} </span>&nbsp;
-        <button style={styles.deleteButton} Click={this.handleDelete.bind(this)}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
+        &nbsp;<span style={Object.assign({}, this.props.task.completed && styles.completed)}><span style={styles.inner}>{this.props.task.title}</span></span>&nbsp;
+        <button style={styles.deleteButton} onClick={this.handleDelete.bind(this)}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
             <form onSubmit={this.handleNote.bind(this)}>
               <input type="text"
                 placeholder="Type in your note..."
