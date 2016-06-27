@@ -53,12 +53,13 @@ class Task extends Component {
       },
 
       noteInput: {
-        borderRadius: '4'
+        padding: '1px',
+        marginBottom: '6px'
       },
 
       note: {
         textAlign: 'left',
-        fontSize: '.5em'
+        fontSize: '.6em'
       },
 
       inner: {
@@ -89,22 +90,23 @@ class Task extends Component {
       noteButton: {
         border: 0,
         borderRadius: 2,
-        color: 'white',
-        padding: '1em'
+        color: 'white'
       }
     }
     return (
       <li style={styles.list}>
       <div style={styles.base}>
-        <button style={styles.checkButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
+        <button style={styles.checkButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></button>
         &nbsp;<span style={Object.assign({}, this.props.task.completed && styles.completed)}><span style={styles.inner}>{this.props.task.title}</span></span>&nbsp;
-        <button style={styles.deleteButton} onClick={this.handleDelete.bind(this)}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
+        <button style={styles.deleteButton} onClick={this.handleDelete.bind(this)}><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i></button>
             <form onSubmit={this.handleNote.bind(this)}>
-              <input type="text"
+              <input
+                style={styles.noteInput}
+                type="text"
                 placeholder="Type in your note..."
                 onChange={this.handleChange.bind(this)}
                 value={this.state.note}/>
-              <button style={styles.submit} type="submit"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+              <button style={styles.noteButton} type="submit"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
             </form>
         <ul style={styles.note}>
           {this.props.task.notes.map((note, i) => {

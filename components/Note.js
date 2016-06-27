@@ -9,17 +9,18 @@ class Note extends Component {
 
   render() {
     let styles = {
-      base: {
+      button: {
         background: 'blue',
         border: 0,
         borderRadius: 4,
         color: 'white',
-        padding: '10px',
+        padding: '6px',
       },
 
       item: {
         listStyleType: 'none',
-        marginLeft: '-10px'
+        marginLeft: '-10px',
+        marginBottom: '6px'
       },
 
       completed: {
@@ -33,7 +34,7 @@ class Note extends Component {
     };
     return (
       <li style={styles.item}>
-        <button style={styles.base} onClick={this.handleCompleteNote.bind(this)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
+        <button style={styles.button} onClick={this.handleCompleteNote.bind(this)}><i className="fa fa-check-circle" aria-hidden="true"></i></button>
         &nbsp; <span style={Object.assign({}, this.props.note.completed && styles.completed)}><span style={styles.inner}>{this.props.note.title}</span></span>
       </li>
     )

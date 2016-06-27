@@ -15,18 +15,19 @@ class App extends Component {
         background: '#d5c8b8'
       },
       title: {
+        color: 'white',
         fontFamily: 'futura',
         fontSize: '3em',
         ':hover': {
-          color: 'white'
+          color: 'black'
         }
       }
     }
     return (
       <div>
-        <center><h1 style={styles.title}>POM Task List</h1></center>
-        {Radium.getState(this.state, 'HI', ':hover') ? (
-          <span>{'HI'} HOW</span>
+        <center><h1 style={styles.title}>POM Todo List</h1></center>
+        {Radium.getState(this.state, ':hover') ? (
+          <span></span>
         ): null}
         {/*<UserInfo user={this.props.user} actions={this.props.actions}/>*/}
         <TaskInput tasks={this.props.tasks} addTask={this.props.actions.addTask}/>

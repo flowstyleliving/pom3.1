@@ -41,6 +41,11 @@ class TaskInput extends Component {
         borderRadius: 4,
         fontSize: '1em',
         padding: '7px'
+      },
+
+      simplify: {
+        color: '#91a3b0',
+        fontFamily: 'futura',
       }
     }
     return (
@@ -53,10 +58,10 @@ class TaskInput extends Component {
          placeholder="Type in your task..."
          value={this.state.inputText}
          onChange={this.handleChange.bind(this)}
-       /> &nbsp;
-       <button style={styles.button} type="submit"><i className="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+       />
+       <button style={styles.button} type="submit"><i className="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></button>
        </form>
-       : <h2>Simplify or GTFO</h2>}
+       : <h2 style={styles.simplify}>"Simplicity is the ultimate sophistication." - Leonardo da Vinci</h2>}
      </center>
     )
   }
