@@ -1,3 +1,8 @@
 # POM Todo List
 
-This is a simple todo list app built with React, Redux and Webpack. I built this app during my [tutorial series on YouTube](https://www.youtube.com/playlist?list=PLQDnxXqV213JJFtDaG0aE9vqvp6Wm7nBg).
+{Plan Out Moments} Todo List app
+
+Caps off at 3 tasks.
+
+
+"Simplicity is the ultimate sophistication" - Leonardo Da Vinci

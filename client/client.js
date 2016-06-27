@@ -14,25 +14,16 @@ import { Provider } from 'react-redux'
 
 let initialState = {
   tasks: [{
-    id: 0,
-    title: 'do this',
-    completed: false,
-    notes: [{
-      id: 0,
-      title: 'note1',
-      completed: false
-    }]
-  }, {
     id: 1,
-    title: 'yes',
+    title: 'Have at most 3 Main Tasks a day!',
     completed: false,
     notes: [{
       id: 0,
-      title: 'Love is True when Truth is Love',
+      title: 'Cross them out with the blue-button',
       completed: false
     }, {
       id: 1,
-      title: 'Peace',
+      title: 'Take a screenshot at the end of day!',
       completed: false
     }]
     }

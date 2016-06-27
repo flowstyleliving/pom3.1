@@ -8,7 +8,6 @@ import actions from '../redux/actions'
 import Radium from 'radium'
 
 class App extends Component {
-
   render() {
     let styles = {
       base: {
@@ -18,18 +17,26 @@ class App extends Component {
         color: 'white',
         fontFamily: 'futura',
         fontSize: '3em',
+        textShadow: '2px 2px #91a3b0'
+      },
+
+      subTitle: {
+        position: 'relative',
+        marginTop: '-26px',
+        color: 'white',
+        fontFamily: 'futura',
+        fontSize: '10px',
         ':hover': {
-          color: 'black'
+          color: 'grey'
         }
       }
     }
     return (
       <div>
-        <center><h1 style={styles.title}>POM Todo List</h1></center>
-        {Radium.getState(this.state, ':hover') ? (
-          <span></span>
-        ): null}
-        {/*<UserInfo user={this.props.user} actions={this.props.actions}/>*/}
+        <center>
+          <h1 style={styles.title}>POM Todo List</h1>
+          <h6 style={styles.subTitle}>Created by <a target="_blank" href="https://github.com/flowstyleliving">@flowstyleliving</a></h6>
+        </center>
         <TaskInput tasks={this.props.tasks} addTask={this.props.actions.addTask}/>
         <TaskList actions={this.props.actions} tasks={this.props.tasks}/>
       </div>

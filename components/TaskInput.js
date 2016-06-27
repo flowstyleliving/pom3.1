@@ -26,6 +26,7 @@ class TaskInput extends Component {
     let styles = {
       button: {
           position: 'absolute',
+          background: 'grey',
           height: '46px',
           border: 0,
           borderRadius: 2,
@@ -39,12 +40,12 @@ class TaskInput extends Component {
         height: '30px',
         marginLeft: '-50px',
         borderRadius: 4,
-        fontSize: '1em',
+        fontSize: '1.1em',
         padding: '7px'
       },
 
       simplify: {
-        color: '#91a3b0',
+        color: 'grey',
         fontFamily: 'futura',
       }
     }

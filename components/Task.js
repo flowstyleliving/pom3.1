@@ -47,14 +47,14 @@ class Task extends Component {
       base: {
         position: 'relative',
         width: '500px',
-        paddingLeft: '300px',
         marginLeft: 'auto',
         marginRight: 'auto'
       },
 
       noteInput: {
         padding: '1px',
-        marginBottom: '6px'
+        marginLeft: '30px',
+        marginBottom: '10px'
       },
 
       note: {
@@ -80,7 +80,7 @@ class Task extends Component {
       },
 
       deleteButton: {
-        background: 'red',
+        background: '#91a3b0',
         color: 'white',
         border: 0,
         borderRadius: 2,
@@ -88,6 +88,7 @@ class Task extends Component {
       },
 
       noteButton: {
+        background: 'grey',
         border: 0,
         borderRadius: 2,
         color: 'white'
