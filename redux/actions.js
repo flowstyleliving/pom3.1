@@ -1,4 +1,10 @@
 let actions = {
+  taskUp: (id) => {
+    return {
+      type: 'TASK_UP',
+      id: id
+    }
+  },
   addNote: (title, id) => {
     return {
       type: 'ADD_NOTE',
