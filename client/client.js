@@ -23,6 +23,10 @@ let initialState = {
       completed: false
     }, {
       id: 1,
+      title: 'Be mindful of your notes',
+      completed: false
+    }, {
+      id: 2,
       title: 'Take a screenshot at the end of day!',
       completed: false
     }]
