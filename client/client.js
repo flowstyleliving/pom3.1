@@ -4,16 +4,17 @@ import App from '../components/App'
 import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
 
-// let initialState = {
-//   todos: [{
-//     id: 0,
-//
-//     text: 'Initial todo for demo purposes'
-//   }],
-//
-
 let initialState = {
   tasks: [{
+    id: 0,
+    title: 'Simplify your Life!',
+    completed: false,
+    notes: [{
+        id: 0,
+        title: 'Be mindful of your notes',
+        completed: false
+    }]
+  }, {
     id: 1,
     title: 'Have at most 3 Main Tasks a day!',
     completed: false,
@@ -23,10 +24,6 @@ let initialState = {
       completed: false
     }, {
       id: 1,
-      title: 'Be mindful of your notes',
-      completed: false
-    }, {
-      id: 2,
       title: 'Take a screenshot at the end of day!',
       completed: false
     }]
