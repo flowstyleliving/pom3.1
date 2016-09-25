@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Note from './Note'
-import MoveButton from './MoveButton'
 
 import Radium from 'radium'
 
@@ -105,7 +104,6 @@ class Task extends Component {
         <button style={styles.checkButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></button>
         &nbsp;<span style={Object.assign({}, this.props.task.completed && styles.completed)}><span style={styles.inner}>{this.props.task.title}</span></span>&nbsp;
         <button style={styles.deleteButton} onClick={this.handleDelete.bind(this)}><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i></button>
-        {/*<MoveButton actions={this.props.actions} task={this.props.task}/>*/}
             <form onSubmit={this.handleNote.bind(this)}>
               <input
                 style={styles.noteInput}

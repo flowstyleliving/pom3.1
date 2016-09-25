@@ -6,8 +6,28 @@ import {bindActionCreators} from 'redux'
 import actions from '../redux/actions'
 // import UserInfo from '../components/UserInfo'
 import Radium from 'radium'
+import Drag from './Drag'
 
 class App extends Component {
+  callback(event, item, index, newIndex, list) {
+    this.setState({arr: list});
+  }
+  itemClicked(event, item) {
+    this.setState({
+      clickedItem: item === this.state.clickedItem ? undefined : item
+    });
+  }
+  itemClicked2(event, item) {
+    this.setState({clickedItem2: item});
+  }
+  disableToggled() {
+    this.setState({disableReorder: !this.state.disableReorder});
+  }
+  prefixChanged(event) {
+    var target = event.currentTarget;
+    this.setState({prefix: target.value});
+  }
+
   render() {
     let styles = {
       base: {
@@ -39,6 +59,7 @@ class App extends Component {
         </center>
         <TaskInput tasks={this.props.tasks} addTask={this.props.actions.addTask}/>
         <TaskList actions={this.props.actions} tasks={this.props.tasks}/>
+        <Drag actions={this.props.actions} tasks={this.props.tasks}/>
       </div>
     )
   }
