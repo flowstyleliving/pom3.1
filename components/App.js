@@ -6,7 +6,6 @@ import {bindActionCreators} from 'redux'
 import actions from '../redux/actions'
 // import UserInfo from '../components/UserInfo'
 import Radium from 'radium'
-import Drag from './Drag'
 
 class App extends Component {
   callback(event, item, index, newIndex, list) {
@@ -59,7 +58,6 @@ class App extends Component {
         </center>
         <TaskInput tasks={this.props.tasks} addTask={this.props.actions.addTask}/>
         <TaskList actions={this.props.actions} tasks={this.props.tasks}/>
-        <Drag actions={this.props.actions} tasks={this.props.tasks}/>
       </div>
     )
   }

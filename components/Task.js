@@ -37,6 +37,10 @@ class Task extends Component {
     this.props.actions.deleteTask(this.props.task.id)
   }
 
+  handleUp() {
+    this.props.actions.taskUp(this.props.task.id)
+  }
+
   render() {
     let styles = {
       list: {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Task from './Task'
 import Radium from 'radium'
-import Reorder from 'react-reorder'
-
 
 class TaskList extends Component {
 

@@ -4,13 +4,17 @@ function getId(tasks) {
   }, -1) + 1
 }
 
+function moveUp(tasks) {
+  return
+}
+
 let taskReducer = function(tasks = [], action) {
   switch (action.type) {
     case 'TASK_UP':
       return tasks.map((task) => {
-        let temp = task.id - 1;
-        task.id = task.id -1;
-        task.id = temp;
+        let temp = tasks[task.id - 1];
+        tasks[task.id] = tasks[task.id - 1];
+        tasks[task.id] = temp;
         return Object.assign({}, task)
       })
     case 'ADD_NOTE':
