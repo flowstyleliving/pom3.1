@@ -11,7 +11,7 @@ let initialState = {
     completed: false,
     notes: [{
       id: 0,
-      title: 'Cross them out with the blue-button',
+      title: 'Create notes to organize step by step',
       completed: false
     }]
   },
