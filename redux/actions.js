@@ -1,7 +1,19 @@
 let actions = {
-  taskUp: (id) => {
+  addTask: function(text) {
     return {
-      type: 'TASK_UP',
+      type: 'ADD_TASK',
+      text: text
+    }
+  },
+  completeTask: function(id) {
+    return {
+      type: 'COMPLETE_TASK',
+      id: id
+    }
+  },
+  deleteTask: function(id) {
+    return {
+      type: 'DELETE_TASK',
       id: id
     }
   },
@@ -19,22 +31,11 @@ let actions = {
       noteId: noteId,
     }
   },
-  addTask: function(text) {
+  deleteNote: (taskId, noteId) => {
     return {
-      type: 'ADD_TASK',
-      text: text
-    }
-  },
-  completeTask: function(id) {
-    return {
-      type: 'COMPLETE_TASK',
-      id: id
-    }
-  },
-  deleteTask: function(id) {
-    return {
-      type: 'DELETE_TASK',
-      id: id
+      type: 'DELETE_NOTE',
+      taskId: taskId,
+      noteId: noteId
     }
   },
   createNewUserId: function() {

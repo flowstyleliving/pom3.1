@@ -10,13 +10,22 @@ function moveUp(tasks) {
 
 let taskReducer = function(tasks = [], action) {
   switch (action.type) {
-    case 'TASK_UP':
+    case 'ADD_TASK':
+      return [{
+          title: action.text,
+          completed: false,
+          id: getId(tasks),
+          notes: []
+        }, ...tasks]
+    case 'COMPLETE_TASK':
       return tasks.map((task) => {
-        let temp = tasks[task.id - 1];
-        tasks[task.id] = tasks[task.id - 1];
-        tasks[task.id] = temp;
-        return Object.assign({}, task)
-      })
+          return task.id === action.id ?
+            Object.assign({}, task, {completed: !task.completed}) : task
+        })
+    case 'DELETE_TASK':
+      return tasks.filter((task) => {
+          return task.id !== action.id
+        })
     case 'ADD_NOTE':
       return tasks.map((task) => {
           if(action.id !== task.id) {
@@ -46,22 +55,19 @@ let taskReducer = function(tasks = [], action) {
               });
             }
       })
-    case 'ADD_TASK':
-      return [{
-          title: action.text,
-          completed: false,
-          id: getId(tasks),
-          notes: []
-        }, ...tasks]
-    case 'COMPLETE_TASK':
+    case 'DELETE_NOTE':
       return tasks.map((task) => {
-          return task.id === action.id ?
-            Object.assign({}, task, {completed: !task.completed}) : task
-        })
-    case 'DELETE_TASK':
-      return tasks.filter((task) => {
-          return task.id !== action.id
-        })
+        if(action.taskId !== task.id) {
+          return task;
+        } else if(action.taskId === task.id) {
+          const { notes } = task;
+          return Object.assing({}, task, {
+            notes: notes.filter((note) => {
+              return action.noteId !== note.Id
+            })
+          })
+        }
+      })
     default:
       return tasks;
   }

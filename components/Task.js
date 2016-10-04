@@ -37,10 +37,6 @@ class Task extends Component {
     this.props.actions.deleteTask(this.props.task.id)
   }
 
-  handleUp() {
-    this.props.actions.taskUp(this.props.task.id)
-  }
-
   render() {
     let styles = {
       list: {
@@ -79,7 +75,7 @@ class Task extends Component {
         color: 'red'
       },
 
-      checkButton: {
+      completeButton: {
         background: 'blue',
         color: 'white',
         border: 0,
@@ -105,7 +101,7 @@ class Task extends Component {
     return (
       <li style={styles.list}>
       <div style={styles.base}>
-        <button style={styles.checkButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></button>
+        <button style={styles.completeButton} onClick={this.handleComplete.bind(this)}><i className="fa fa-check-circle fa-lg" aria-hidden="true"></i></button>
         &nbsp;<span style={Object.assign({}, this.props.task.completed && styles.completed)}><span style={styles.inner}>{this.props.task.title}</span></span>&nbsp;
         <button style={styles.deleteButton} onClick={this.handleDelete.bind(this)}><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i></button>
             <form onSubmit={this.handleNote.bind(this)}>
