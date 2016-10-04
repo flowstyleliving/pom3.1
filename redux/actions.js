@@ -28,7 +28,7 @@ let actions = {
     return {
       type: 'COMPLETE_NOTE',
       taskId: taskId,
-      noteId: noteId,
+      noteId: noteId
     }
   },
   deleteNote: (taskId, noteId) => {

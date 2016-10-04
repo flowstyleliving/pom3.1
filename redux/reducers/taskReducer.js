@@ -61,9 +61,9 @@ let taskReducer = function(tasks = [], action) {
           return task;
         } else if(action.taskId === task.id) {
           const { notes } = task;
-          return Object.assing({}, task, {
+          return Object.assign({}, task, {
             notes: notes.filter((note) => {
-              return action.noteId !== note.Id
+              return action.noteId !== note.id
             })
           })
         }
